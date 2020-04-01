@@ -209,7 +209,7 @@ def Lottery(chancelabel, students, lenght, button, name, label, StudentCancel, U
 			break
 
 	if end is False:
-		button['text'] = 'Losuj'
+		button['text'] = 'Roll'
 		try:
 			var = str(choice).split(' ')
 			label['text'] =	var[0] + '\n' + var[1] + '\n' + var[2]
@@ -217,9 +217,9 @@ def Lottery(chancelabel, students, lenght, button, name, label, StudentCancel, U
 		except:
 			pass
 		try:
-			chancelabel['text'] = \
-				'Chance to roll a student: ' \
-				+ str(int(round(1/(len(open('data\\files\\' + name).readlines()) - len(choosen_list)), 2)*100)) + '%'
+			chancelabel['text'] = 'Chance to roll a student: ' + \
+								  str(int(round(1/(len(open('data\\files\\' + name).readlines()) -
+												   len(choosen_list)), 2)*100)) + '%'
 		except:
 			chancelabel['text'] = 'Chance to roll a student: ...%'
 	else:
